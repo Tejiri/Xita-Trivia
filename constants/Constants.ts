@@ -25,11 +25,20 @@ const COLORS = {
         purple600: "#9333ea",
     },
 
+// Button Hover: #fde047 (Lighter Yellow)
+// Button Text: #1f2937 (Dark Gray)
+// Card Text/Icons: #ffffff (White)
+// Counter Badge: rgba(255, 255, 255, 0.2) (Semi-transparent)
+// Disabled State: rgba(255, 255, 255, 0.2) (Grayed out)
     backgrounds: {
+        hintCard: "#facc15", // Yellow
+        hintGradientStart: "#facc15", // Yellow
+        hintGradientEnd: "#fb923c",   // Orange
         bgWhite10: "rgba(255,255,255,0.1)", // White at 10% opacity (glass effect)
         bgWhite20: "rgba(255,255,255,0.2)", // White at 20% opacity (inactive states)
         bgWhite30: "rgba(255,255,255,0.3)", // White at 30% opacity (hover states)
         bgWhite50: "rgba(255,255,255,0.5)"  // White at 50% opacity (disabled answers)
+
     },
 }
 

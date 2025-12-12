@@ -9,9 +9,6 @@ import GradientBackground from "../components/backgrounds/GradientBackground";
 
 const Index = observer(() => {
 
-    // useEffect(() => {
-    //     // questionStore.fetchQuestions();
-    // }, []);
     return <GradientBackground>
         <SafeAreaView>
 
@@ -27,7 +24,8 @@ const Index = observer(() => {
 
                 <Text style={CONSTANTS.TYPOGRAPHY.body}>Test yout knowledge</Text>
                 <Spacer height={20} />
-                <CustomButton buttonText="Start Game" showLeadingIcon={true} onPress={()=>{
+                <CustomButton buttonText="Start Game" showLeadingIcon={true} onPress={() => {
+
                     console.log("Start Game Pressed");
                     // router.push({pathname:"/screens/Results", params: {score: 5}});
                     router.push("/screens/SetupGame");
@@ -35,7 +33,7 @@ const Index = observer(() => {
             </View>
 
 
-         
+
             <Spacer height={50} />
 
         </ScrollView>

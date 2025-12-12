@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "651011220308",
+    "project_id": "xita-trivia",
+    "storage_bucket": "xita-trivia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651011220308:android:c6614560616a0da0051ec1",
+        "android_client_info": {
+          "package_name": "com.xita.xitatrivia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArg1OnBZPQC8N2X-kvubZXn_UlYdCKQyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
