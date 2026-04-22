@@ -1,5 +1,5 @@
 
-import CONSTANTS from "@/constants/Constants"
+import CONSTANTS from "@/constants/CONSTANTS"
 import { LinearGradient } from "expo-linear-gradient"
 import React from "react"
 import { StyleSheet } from "react-native"

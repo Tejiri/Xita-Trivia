@@ -10,6 +10,7 @@ export type QuestionData = {
   incorrect_answers?: string[];
 };
 
+
 export default class Question {
     type: string = "";
     difficulty: string = "";

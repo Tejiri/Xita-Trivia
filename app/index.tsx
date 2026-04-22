@@ -1,14 +1,35 @@
-import CustomButton from "@/components/CustomButton";
-import Spacer from "@/components/Spacer";
-import CONSTANTS from "@/constants/Constants";
+
+import Spacer from "@/components/ui/Spacer";
+import CONSTANTS from "@/constants/CONSTANTS";
 import { router } from "expo-router";
 import { observer } from "mobx-react-lite";
+import { useEffect } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import GradientBackground from "../components/backgrounds/GradientBackground";
 
 const Index = observer(() => {
+    useEffect(() => {
 
+        let timer: ReturnType<typeof setTimeout> | null = null;
+
+
+        timer = setTimeout(() => {
+            router.replace("/(tabs)/PlayScreen");
+            // if (isLoggedIn) {
+            //     // router.replace("/AdminDashboard");
+            //     router.replace("/(regular-u");
+            //     console.log("User logged in");
+            // } else {
+            //     // router.replace("/AdminDashboard");
+            //     // router.replace("/(regular-user-tabs)/HomeScreen");
+            //     // router.replace("/screens/linked-accounts/linked-assets/LinkedAssets")
+            //     router.replace("/screens/LoginScreen");
+            //     console.log("User not logged in");
+            // }
+        }, 500);
+
+    }, []);
     return <GradientBackground>
         <SafeAreaView>
 
@@ -24,12 +45,7 @@ const Index = observer(() => {
 
                 <Text style={CONSTANTS.TYPOGRAPHY.body}>Test yout knowledge</Text>
                 <Spacer height={20} />
-                <CustomButton buttonText="Start Game" showLeadingIcon={true} onPress={() => {
-
-                    console.log("Start Game Pressed");
-                    // router.push({pathname:"/screens/Results", params: {score: 5}});
-                    router.push("/screens/SetupGame");
-                }} />
+               
             </View>
 
 

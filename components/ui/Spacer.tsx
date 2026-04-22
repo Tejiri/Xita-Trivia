@@ -1,10 +1,10 @@
 import { View } from "react-native";
 
-interface SpacerProps {
+interface ISpacer {
     height?: number,
     width?: number
 }
-export default function Spacer({ height, width }: SpacerProps) {
+export default function Spacer({ height, width }: ISpacer) {
     return <View style={{
         height: height ?? null,
         width: width ?? null

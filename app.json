@@ -10,6 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
+      "googleServicesFile": "./GoogleService-Info.plist",
       "bundleIdentifier": "com.xita.xitatrivia",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
@@ -24,6 +25,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
+      "googleServicesFile": "./google-services.json",
       "package": "com.xita.xitatrivia"
     },
     "web": {
@@ -44,13 +46,34 @@
           }
         }
       ],
-
-       [
+      [
         "expo-camera",
         {
           "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
           "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
           "recordAudioAndroid": true
+        }
+      ],
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "@react-native-firebase/messaging",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static",
+            "buildReactNativeFromSource": true,
+            "forceStaticLinking": [
+              "RNFBAnalytics",
+              "RNFBApp",
+              "RNFBCrashlytics",
+              "RNFBInAppMessaging",
+              "RNFBInstallations",
+              "RNFBPerf",
+              "RNFBAuth",
+              "RNFBFirestore"
+            ]
+          }
         }
       ]
     ],

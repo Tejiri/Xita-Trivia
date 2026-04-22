@@ -1,4 +1,4 @@
-import CONSTANTS from "@/constants/Constants";
+import CONSTANTS from "@/constants/CONSTANTS";
 import { gameSetupStore } from "@/models/GameSetupStore";
 import { observer } from "mobx-react-lite";
 import { Pressable, StyleSheet, Text } from "react-native";

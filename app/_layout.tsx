@@ -2,6 +2,8 @@ import { Stack } from 'expo-router';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
+import { StoreProvider } from '@/stores/StoreProvider';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 
@@ -9,13 +11,13 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Stack >
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="screens/SetupGame" options={{ headerShown: false }} />
-      <Stack.Screen name="screens/Questions" options={{ headerShown: false }} />
-      <Stack.Screen name="screens/Results" options={{ headerShown: false }} />
 
-    </Stack>
+    <StoreProvider>
+      <SafeAreaProvider>
+        <Stack screenOptions={{ headerShown: false }} />
+      </SafeAreaProvider>
+    </StoreProvider>
+
 
   );
 }
