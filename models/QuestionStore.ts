@@ -17,7 +17,6 @@ class QuestionStore {
   }
 
   async fetchQuestions(amount = 10, category: number, difficulty: string) {
-    console.log(category +"dsnisfiodhiofhihfiohjfdiojhfdiofdiofdhoi ");
     if (category == 0 || difficulty == "") {
       return false;
     }
@@ -31,13 +30,12 @@ class QuestionStore {
         this.response.update(data); // maps to Question instances
         this.loading = false;
 
-        // console.log("Questions fetched:", this.response.results[0].category );
-        
+         
       });
       return true;
     } catch (e) {
       runInAction(() => {
-        console.log("Error fetching questions:", e  );
+        
         
         this.error = String(e);
         this.loading = false;

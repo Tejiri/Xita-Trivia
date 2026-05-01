@@ -2,7 +2,7 @@ import ProfileAvatar from "@/components/ui/ProfileAvater";
 import Spacer from "@/components/ui/Spacer";
 import CONSTANTS, { IonIconName } from "@/constants/CONSTANTS";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 interface IQuestionTypeView {
     onPress: () => void;
     isSelected?: boolean;
@@ -15,7 +15,8 @@ interface IQuestionTypeView {
 
 const QuestionTypeView = ({ onPress, isSelected, text1, text2, icon, rotateIconValue }: IQuestionTypeView) => {
     return (
-        <View
+        <Pressable
+        onPress={onPress}
             style={
                 {
                     backgroundColor: isSelected ? CONSTANTS.COLORS.primary.primary7 : CONSTANTS.COLORS.neutral.neutral3,
@@ -34,8 +35,7 @@ const QuestionTypeView = ({ onPress, isSelected, text1, text2, icon, rotateIconV
             >
                 <ProfileAvatar
                     backgroundColor={CONSTANTS.COLORS.primary.white}
-                    height={60}
-                    width={60}
+                    size={60}
                     borderRadius={15}
                 >
                     <Ionicons name={icon} size={30} color={CONSTANTS.COLORS.primary.primary9} />
@@ -64,7 +64,7 @@ const QuestionTypeView = ({ onPress, isSelected, text1, text2, icon, rotateIconV
             </View>
 
             <Spacer height={10} />
-        </View>
+        </Pressable>
 
     );
 };

@@ -1,4 +1,4 @@
-import CONSTANTS, { FontAwesomeIconName, IonIconName } from "@/constants/CONSTANTS";
+import CONSTANTS, { FontAwesomeIconName, GameCategory, IonIconName } from "@/constants/CONSTANTS";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Text, View } from "react-native";
@@ -8,14 +8,14 @@ import Spacer from "../ui/Spacer";
 
 interface IArenaComponent {
     icon: FontAwesomeIconName | IonIconName;
-    title: string;
-    questionCount: number;
+    title: GameCategory;
+    subTitle: string;
     backgroundColor?: string;
     iconBackgroundColor?: string;
     onPress?: () => void;
 }
 
-const ArenaComponent = ({ icon, title, questionCount, backgroundColor, iconBackgroundColor = CONSTANTS.COLORS.primary.primary8, onPress }: IArenaComponent) => {
+const ArenaComponent = ({ icon, title, subTitle, backgroundColor, iconBackgroundColor = CONSTANTS.COLORS.primary.primary8, onPress }: IArenaComponent) => {
     return (
         <View>
             <CurvedBackground
@@ -39,7 +39,7 @@ const ArenaComponent = ({ icon, title, questionCount, backgroundColor, iconBackg
                 <Spacer width={20} />
                 <View style={{ flex: 1 }}>
                     <Text style={CONSTANTS.TYPOGRAPHY.h4}>{title}</Text>
-                    <Text>{questionCount} Questions</Text>
+                    <Text>{subTitle}</Text>
                 </View>
 
                 <Ionicons name="arrow-forward" size={24} color={CONSTANTS.COLORS.neutral.neutral6} />

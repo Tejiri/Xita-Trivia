@@ -38,15 +38,14 @@ const DifficultyView = ({ isSelected, label, description, onPress }: IDifficulty
 
                 <ProfileAvatar
                     backgroundColor={CONSTANTS.COLORS.primary.white}
-                    height={40}
-                    width={40}
+                   size={40}
                 >
                     {isSelected ?
                         <View
                             style={styles.selectedDifficultyIndicator}
                         >
 
-                        </View> : null}
+                        </View> : <Text></Text>}
                 </ProfileAvatar>
             </CurvedBackground>
             <Spacer height={20} />

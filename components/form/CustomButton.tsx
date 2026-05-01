@@ -8,8 +8,8 @@ interface ICustomButton {
     backgroundColor?: string,
     transparent?: boolean,
     textColor?: string,
-    height?: number
-
+    height?: number,
+    flex?: number,
     // shadow / elevation props (optional)
     shadow?: boolean;
     elevation?: number;
@@ -17,12 +17,15 @@ interface ICustomButton {
     shadowRadius?: number;
     shadowOpacity?: number;
 
+    paddingHorizontal?: number;
+    paddingVertical?: number;
+
 }
 
 export default function CustomButton({
     buttonText = "Get Started",
     onClick,
-    backgroundColor = CONSTANTS.COLORS.primary.primary8,
+    backgroundColor = CONSTANTS.COLORS.primary.primary9,
     transparent = false,
     textColor,
     height,
@@ -31,10 +34,13 @@ export default function CustomButton({
     shadowStyle,
     shadowRadius = 6,
     shadowOpacity = 0.12,
+    paddingHorizontal,
+    paddingVertical,
+    flex = 0
 }: ICustomButton) {
     const bgColor = transparent ? "transparent" : backgroundColor;
-    const txtColor = textColor ?? (transparent ? CONSTANTS.COLORS.primary.primary8 : "white");
-    const borderStyle = transparent ? { borderWidth: 1, borderColor: CONSTANTS.COLORS.primary.primary8 } : {};
+    const txtColor = textColor ?? (transparent ? CONSTANTS.COLORS.primary.primary9 : "white");
+    const borderStyle = transparent ? { borderWidth: 1, borderColor: CONSTANTS.COLORS.primary.primary9 } : {};
 
     const computedShadow = shadow
         ? {
@@ -57,27 +63,35 @@ export default function CustomButton({
                             opacity: 0.75,
                             backgroundColor: bgColor,
                             height: height ?? null,
+                            paddingVertical: paddingVertical ?? 15,
+                            paddingHorizontal: paddingHorizontal ?? 15,
                             ...computedShadow,
-                        }]
+                        },
+                        { flex: flex }
+                    ]
                     : [
                         styles.button_view,
                         borderStyle,
                         {
                             backgroundColor: bgColor,
                             height: height ?? null,
+                            paddingVertical: paddingVertical ?? 15,
+                            paddingHorizontal: paddingHorizontal ?? 15,
                             ...computedShadow,
-                        }]
+                        },
+                        { flex: flex }
+                    ]
             }
             onPress={onClick}
         >
-            <Text style={[CONSTANTS.TYPOGRAPHY.h3, { color: txtColor, textAlign: "center" }]}>{buttonText}</Text>
+            <Text style={[CONSTANTS.TYPOGRAPHY.h5, { color: txtColor, textAlign: "center" }]}>{buttonText}</Text>
         </Pressable>
     );
 }
 
 const styles = StyleSheet.create({
     button_view: {
-        padding: 20,
+        // padding: 15,
         borderRadius: 15,
         width: "100%",
         alignSelf: "center",

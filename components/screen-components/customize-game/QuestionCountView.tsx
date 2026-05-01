@@ -4,13 +4,15 @@ import CONSTANTS from "@/constants/CONSTANTS";
 import { Text } from "react-native";
 
 interface IQuestionCountView {
+    onPress?: () => void;
     isSelected?: boolean;
     count: number;
 }
 
-const QuestionCountView = ({ isSelected, count }: IQuestionCountView) => {
+const QuestionCountView = ({ onPress, isSelected, count }: IQuestionCountView) => {
     return (
         <ProfileAvatar
+            onPress={onPress}
             size={80}
             backgroundColor={isSelected ? CONSTANTS.COLORS.primary.primary8 : CONSTANTS.COLORS.neutral.neutral4} >
             <Text style={[CONSTANTS.TYPOGRAPHY.h4, { color: isSelected ? CONSTANTS.COLORS.primary.white : CONSTANTS.COLORS.neutral.neutral11 }]}>{count}</Text>

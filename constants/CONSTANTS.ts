@@ -238,30 +238,43 @@ const EMOJIS = {
 }
 
 
-const CATEGORIES = {
-    generalKnowledge: 'General Knowledge',
-    sports: 'Sports',
-    history: 'History',
-    computers: 'Computers',
-    science: 'Science',
-    film: 'Film',
-    animals: 'Animals',
+const GAME_CATEGORIES = {
+    "General Knowledge": 9,
+    "Sports": 21,
+    "Mythology": 20,
+    "History": 23,
+    "Computers": 18,
+    "Art": 25,
+    "Science": 17,
+    "Geography": 22,
+    "Animals": 27,
 };
 
-const DIFFICULTY = {
-    easy: 'easy',
-    medium: 'medium',
-    hard: 'hard',
+const GAME_DIFFICULTY = {
+    "Easy": 'easy',
+    "Medium": 'medium',
+    "Hard": 'hard',
 };
+
+const GAME_TYPE = {
+    multipleChoice: "multiple",
+    trueFalse: "boolean",
+}
+
+
 
 const CONSTANTS = {
     COLORS,
     EMOJIS,
     TYPOGRAPHY,
-    CATEGORIES,
-    DIFFICULTY,
+    GAME_CATEGORIES,
+    GAME_DIFFICULTY,
+    GAME_TYPE
 }
 
+export type GameCategory = keyof typeof GAME_CATEGORIES;
+export type GameDifficulty = keyof typeof GAME_DIFFICULTY;
+export type GameType = keyof typeof GAME_TYPE;
 export type IonIconName = keyof typeof Ionicons.glyphMap;
 export type FontAwesomeIconName = keyof typeof FontAwesome.glyphMap;
 

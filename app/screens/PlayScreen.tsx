@@ -3,14 +3,19 @@ import ArenaComponent from "@/components/play/ArenaComponent";
 import Spacer from "@/components/ui/Spacer";
 import CONSTANTS from "@/constants/CONSTANTS";
 import { useStores } from "@/stores/useStores";
+// import { GoogleGenerativeAI } from "@google/generative-ai";
 import { router } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
+
+
 const PlayScreen = () => {
     const { gameSetupStore } = useStores();
     return (
 
         <PageWithHeader>
-            <ScrollView>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+            >
                 <View style={styles.pickArenaView}>
                     <Text
                         style={[CONSTANTS.TYPOGRAPHY.h1,]}
@@ -34,20 +39,22 @@ const PlayScreen = () => {
 
                 <ArenaComponent
                     onPress={() => {
+                      
                         gameSetupStore.setCategory("General Knowledge");
                         router.push("/screens/CustomizeGameScreen")
+
                     }}
                     icon="book"
-                    title="GENERAL KNOWLEDGE"
-                    questionCount={420} />
+                    title="General Knowledge"
+                    subTitle="Broad questions across many topics" />
                 <ArenaComponent
                     onPress={() => {
                         gameSetupStore.setCategory("Sports");
                         router.push("/screens/CustomizeGameScreen");
                     }}
                     icon="futbol-o"
-                    title="SPORTS"
-                    questionCount={420}
+                    title="Sports"
+                    subTitle="Athletes, games and sporting events"
                     backgroundColor={CONSTANTS.COLORS.neutral.neutral3}
                     iconBackgroundColor={CONSTANTS.COLORS.neutral.neutral8}
                 // backgroundColor={CONSTANTS.COLORS.primary.primary3}
@@ -61,8 +68,8 @@ const PlayScreen = () => {
                         router.push("/screens/CustomizeGameScreen");
                     }}
                     icon="empire"
-                    title="MYTHOLOGY"
-                    questionCount={420} />
+                    title="Mythology"
+                    subTitle="Legends, gods and ancient tales" />
 
 
 
@@ -72,8 +79,8 @@ const PlayScreen = () => {
                         router.push("/screens/CustomizeGameScreen");
                     }}
                     icon="flask"
-                    title="SCIENCE"
-                    questionCount={420}
+                    title="Science"
+                    subTitle="Physics, biology and scientific facts"
                     backgroundColor={CONSTANTS.COLORS.neutral.neutral3}
                     iconBackgroundColor={CONSTANTS.COLORS.neutral.neutral8}
                 // backgroundColor={CONSTANTS.COLORS.primary.primary3}
@@ -86,8 +93,8 @@ const PlayScreen = () => {
                         router.push("/screens/CustomizeGameScreen");
                     }}
                     icon="paint-brush"
-                    title="ART"
-                    questionCount={420} />
+                    title="Art"
+                    subTitle="Artists, movements and artworks" />
 
 
 
@@ -97,8 +104,8 @@ const PlayScreen = () => {
                         router.push("/screens/CustomizeGameScreen");
                     }}
                     icon="map"
-                    title="GEOGRAPHY"
-                    questionCount={420}
+                    title="Geography"
+                    subTitle="Countries, capitals and maps"
                     backgroundColor={CONSTANTS.COLORS.neutral.neutral3}
                     iconBackgroundColor={CONSTANTS.COLORS.neutral.neutral8}
                 // backgroundColor={CONSTANTS.COLORS.primary.primary3}
@@ -112,24 +119,22 @@ const PlayScreen = () => {
                         router.push("/screens/CustomizeGameScreen");
                     }}
                     icon="history"
-                    title="HISTORY"
-                    questionCount={420}
-
+                    title="History"
+                    subTitle="People, events and historical milestones"
                 // backgroundColor={CONSTANTS.COLORS.primary.primary3}
                 // iconBackgroundColor={CONSTANTS.COLORS.primary.primary9}
                 />
 
-                   <ArenaComponent
+                <ArenaComponent
                     onPress={() => {
                         gameSetupStore.setCategory("Computers");
                         router.push("/screens/CustomizeGameScreen");
                     }}
-                    icon="history"
-                    title="COMPUTERS"
-                    questionCount={420}
-
-                // backgroundColor={CONSTANTS.COLORS.primary.primary3}
-                // iconBackgroundColor={CONSTANTS.COLORS.primary.primary9}
+                    icon="laptop"
+                    title="Computers"
+                    subTitle="Tech, programming and computing concepts"
+                    backgroundColor={CONSTANTS.COLORS.neutral.neutral3}
+                    iconBackgroundColor={CONSTANTS.COLORS.neutral.neutral8}
                 />
 
             </ScrollView>

@@ -1,5 +1,7 @@
+import { GameSetupStore } from "./GameSetupStore";
 
 export class RootStore {
+    gameSetupStore: GameSetupStore;
     // userStore: UserStore;
     // loanApplicationStore: LoanApplicationStore;
     // transactionStore: TransactionStore;
@@ -8,6 +10,7 @@ export class RootStore {
     // commentStore: CommentStore;
 
     constructor() {
+        this.gameSetupStore = new GameSetupStore();
         // this.userStore = new UserStore();
         // this.loanApplicationStore = new LoanApplicationStore();
         // this.transactionStore = new TransactionStore();
@@ -15,4 +18,6 @@ export class RootStore {
         // this.noticeStore = new NoticeStore();
         // this.commentStore = new CommentStore();
     }
+
+    
 }

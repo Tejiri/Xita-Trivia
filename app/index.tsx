@@ -15,18 +15,8 @@ const Index = observer(() => {
 
 
         timer = setTimeout(() => {
-            router.replace("/(tabs)/PlayScreen");
-            // if (isLoggedIn) {
-            //     // router.replace("/AdminDashboard");
-            //     router.replace("/(regular-u");
-            //     console.log("User logged in");
-            // } else {
-            //     // router.replace("/AdminDashboard");
-            //     // router.replace("/(regular-user-tabs)/HomeScreen");
-            //     // router.replace("/screens/linked-accounts/linked-assets/LinkedAssets")
-            //     router.replace("/screens/LoginScreen");
-            //     console.log("User not logged in");
-            // }
+            router.replace("/screens/PlayScreen");
+           
         }, 500);
 
     }, []);
